@@ -1,0 +1,20 @@
+cat > .gitignore << 'ENDGIT'
+# SSH private keys - NEVER commit
+ssh/id_lab
+ssh/id_rsa
+ssh/*.key
+
+# Python
+__pycache__/
+*.pyc
+
+# Editor
+*.swp
+*~
+
+# OS
+.DS_Store
+
+# Logs
+*.log
+ENDGIT

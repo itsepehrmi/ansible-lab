@@ -1,0 +1,40 @@
+services:
+  node1:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: ansible-lab-node:latest
+    container_name: ec2-node-1
+    hostname: ec2-node-1
+    ports:
+      - "2201:22"
+    networks:
+      - ansible-net
+
+  node2:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: ansible-lab-node:latest
+    container_name: ec2-node-2
+    hostname: ec2-node-2
+    ports:
+      - "2202:22"
+    networks:
+      - ansible-net
+
+  node3:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: ansible-lab-node:latest
+    container_name: ec2-node-3
+    hostname: ec2-node-3
+    ports:
+      - "2203:22"
+    networks:
+      - ansible-net
+
+networks:
+  ansible-net:
+    driver: bridge  
